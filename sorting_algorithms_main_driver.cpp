@@ -33,6 +33,29 @@
 #define VERY_SMALL		1024	// 2^10
 #define TINY			256 	// 2 ^8
 
+enum Sort {
+  BubbleSort,
+  InsertionSort
+};
+
+float getTime(int* array, unsigned long length, Sort crnt_sort) {
+  init_random(array, length);
+  if(crnt_sort == BubbleSort) {
+    start_stopwatch();
+    bubble_sort(array, length);
+    float return_value = elapsed_time();
+  }
+}
+
+int a_huge[HUGE];
+int a_very_large[VERY_LARGE];
+int a_large[LARGE];
+int a_middle[MIDDLE];
+int a_small[SMALL];
+int a_very_small[VERY_SMALL];
+
+
+
 /*
 * Suggestion how to initialize the arrays which must be sorted with test data.
 * 1. Create a array of size HUGE and initialize it with random data.
