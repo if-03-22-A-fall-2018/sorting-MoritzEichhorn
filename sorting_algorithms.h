@@ -13,6 +13,12 @@
 #ifndef ___SORTING_ALGORITHMS_H
 #define ___SORTING_ALGORITHMS_H
 
+void init_random (int *array, unsigned long length);
+
+void bubble_sort (int *array, unsigned long length);
+
+void insertion_sort (int *array, unsigned long length);
+
 /**
 *** @file sorting_algorithms.h
 *** @brief Description of sorting algorithms

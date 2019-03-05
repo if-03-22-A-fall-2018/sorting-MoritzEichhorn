@@ -12,7 +12,12 @@
  */
 #ifndef ___STOPWATCH_H
 #define ___STOPWATCH_H
+#include <time.h>
+void start_stopwatch ();
 
+void stop_stopwatch ();
+
+float elapsed_time ();
 /**
 *** @file stopwatch.h
 *** @brief Description of stopwatch
