@@ -1,13 +1,13 @@
 /*-----------------------------------------------------------------------------
- *				HTBLA-Leonding / Class: <your class name here>
+ *				HTBLA-Leonding / Class: 2AHIF
  *-----------------------------------------------------------------------------
- * Exercise Number: #exercise_number#
+ * Exercise Number: 16
  * File:			sorting_algorithms.cpp
- * Author(s):		<your name>
- * Due Date:		#due#
+ * Author(s):		Eichhorn Moritz
+ * Due Date:		10.3.2019
  *-----------------------------------------------------------------------------
  * Description:
- * <your description here>
+ * Implementation of BubbleSort and InsertionSort.
  *-----------------------------------------------------------------------------
 */
 #include "sorting_algorithms.h"

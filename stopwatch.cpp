@@ -1,13 +1,13 @@
 /*-----------------------------------------------------------------------------
- *				HTBLA-Leonding / Class: <your class name here>
+ *				HTBLA-Leonding / Class: 2AHIF
  *-----------------------------------------------------------------------------
- * Exercise Number: #exercise_number#
+ * Exercise Number: 16
  * File:			stopwatch.cpp
- * Author(s):		Peter Bauer
- * Due Date:		#due#
+ * Author(s):		Eichhorn Moritz
+ * Due Date:		10.3.2019
  *-----------------------------------------------------------------------------
  * Description:
- * <your description here>
+ * Normal stopwatch.
  *-----------------------------------------------------------------------------
 */
 #include "stopwatch.h"
@@ -20,7 +20,7 @@ void start_stopwatch () {
 }
 
 void stop_stopwatch () {
-  
+
 }
 
 float elapsed_time () {

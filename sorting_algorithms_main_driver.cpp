@@ -1,13 +1,14 @@
 /*-----------------------------------------------------------------------------
- *				HTBLA-Leonding / Class: <your class name here>
+ *				HTBLA-Leonding / Class: 2AHIF
  *-----------------------------------------------------------------------------
- * Exercise Number: #exercise_number#
+ * Exercise Number: 16
  * File:			compare_sorts_main.c
- * Author(s):		Peter Bauer
- * Due Date:		#due#
+ * Author(s):		Eichhorn Moritz
+ * Due Date:		10.3.2019
  *-----------------------------------------------------------------------------
  * Description:
- * <your description here>
+ * Compares the sorts(BubbleSort and InsertionSort) and prints the resulsts
+ * to the console.
  *-----------------------------------------------------------------------------
 */
 
@@ -39,21 +40,53 @@ enum Sort {
 };
 
 float getTime(int* array, unsigned long length, Sort crnt_sort) {
-  init_random(array, length);
   if(crnt_sort == BubbleSort) {
     start_stopwatch();
     bubble_sort(array, length);
-    float return_value = elapsed_time();
+    return elapsed_time();
+  }
+  else
+  {
+    start_stopwatch();
+    insertion_sort(array, length);
+    return elapsed_time();
   }
 }
 
-int a_huge[HUGE];
-int a_very_large[VERY_LARGE];
-int a_large[LARGE];
-int a_middle[MIDDLE];
-int a_small[SMALL];
-int a_very_small[VERY_SMALL];
+int main(int argc, char const *argv[]) {
+  int test_data[HUGE];
+  init_random(test_data, HUGE);
+  int a_huge[HUGE];
+  int a_very_large[VERY_LARGE];
+  int a_large[LARGE];
+  int a_middle[MIDDLE];
+  int a_small[SMALL];
+  int a_very_small[VERY_SMALL];
+  int a_tiny[TINY];
 
+  printf("Algorithm\tTiny\t\tV_Small\t\tSmall\t\tMiddle\t\tLarge\t\tV_Large\t\tHuge\n");
+
+  Sort sort = BubbleSort;
+
+  for (size_t i = 0; i < 2; i++) {
+    memcpy(a_huge, test_data, sizeof(int) * HUGE);
+    memcpy(a_very_large, test_data, sizeof(int) * VERY_LARGE);
+    memcpy(a_large, test_data, sizeof(int) * LARGE);
+    memcpy(a_middle, test_data, sizeof(int) * MIDDLE);
+    memcpy(a_small, test_data, sizeof(int) * SMALL);
+    memcpy(a_very_small, test_data, sizeof(int) * VERY_SMALL);
+    memcpy(a_tiny, test_data, sizeof(int) * TINY);
+
+    if(sort == BubbleSort) {
+      printf("BubbleSort\t");
+    } else {
+      printf("InsertionSort\t");
+    }
+
+    printf("%f\t%f\t%f\t%f\t%f\t%f\t%f\n",getTime(a_tiny, TINY, sort),getTime(a_very_small, VERY_SMALL, sort),getTime(a_small, SMALL, sort),getTime(a_middle, MIDDLE, sort),getTime(a_large, LARGE, sort),getTime(a_very_large, VERY_LARGE, sort),getTime(a_huge, HUGE, sort));
+    sort = InsertionSort;
+  }
+}
 
 
 /*
